@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices.services.cl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices.services.cl/">
+
+<xs:element name="buscarProducto" type="tns:buscarProducto"/>
+
+<xs:element name="buscarProductoResponse" type="tns:buscarProductoResponse"/>
+
+<xs:element name="insertarProducto" type="tns:insertarProducto"/>
+
+<xs:element name="insertarProductoResponse" type="tns:insertarProductoResponse"/>
+
+<xs:element name="listarProductos" type="tns:listarProductos"/>
+
+<xs:element name="listarProductosResponse" type="tns:listarProductosResponse"/>
+
+<xs:complexType name="buscarProducto">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="listarProductos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listarProductosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:productos" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="productos">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" minOccurs="0"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:int"/>
+<xs:element name="stock" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarProducto">
+<xs:sequence>
+<xs:element name="codigo" type="xs:int" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:int"/>
+<xs:element name="stock" type="xs:int"/>
+<xs:element name="descripcion" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
